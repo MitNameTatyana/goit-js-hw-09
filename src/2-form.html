@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homework 9</title>
+    <title>Task 2 - Form</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -15,13 +15,20 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <ul class="nav-list">
-      <li class="nav-item">
-        <a href="./1-gallery.html" class="nav-link">Gallery</a>
-      </li>
-      <li class="nav-item">
-        <a href="./2-form.html" class="nav-link">Form</a>
-      </li>
-    </ul>
+    <a href="./index.html" class="nav-link">Home</a>
+
+    <form class="feedback-form" autocomplete="off">
+      <label>
+        Email
+        <input type="email" name="email" autofocus />
+      </label>
+      <label>
+        Message
+        <textarea name="message" rows="8"></textarea>
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+
+    <script src="./js/2-form.js" type="module"></script>
   </body>
 </html>
