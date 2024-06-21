@@ -7,8 +7,8 @@ const formData = {
 };
 
 form.addEventListener('input', evt => {
-  formData.email = form.elements.email.value;
-  formData.message = form.elements.message.value;
+  formData.email = form.elements.email.value.trim();
+  formData.message = form.elements.message.value.trim();
 
   saveToLS(LS_Key, formData);
 });
@@ -21,16 +21,16 @@ window.addEventListener('DOMContentLoaded', evt => {
 
 form.addEventListener('submit', evt => {
   evt.preventDefault();
-  formData.email = form.elements.email.value.trim();
-  formData.message = form.elements.message.value.trim();
+  formData.email = form.elements.email.value;
+  formData.message = form.elements.message.value;
 
   if (!formData.email || !formData.message) {
     alert('Fill please all fields');
+  } else {
+    console.log(formData);
+    localStorage.removeItem(LS_Key);
+    form.reset();
   }
-
-  console.log(formData);
-  localStorage.removeItem(LS_Key);
-  form.reset();
 });
 
 function saveToLS(key, value) {
